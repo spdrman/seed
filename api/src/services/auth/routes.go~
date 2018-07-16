@@ -1,0 +1,16 @@
+package auth
+
+import "github.com/gin-gonic/gin"
+
+// Routes for importing in main server router by calling the auth.Routes(router) function
+func Routes(r *gin.RouterGroup) {
+	r.POST("/auth/register", registerHandler)
+
+	r.POST("/auth/verifyemail", verifyEmailHandler)
+
+	r.POST("/auth/login", loginHandler)
+
+	r.POST("/auth/forgotpassword", forgotPasswordHandler)
+
+	r.POST("/aut/logout", logoutHandler)
+}
